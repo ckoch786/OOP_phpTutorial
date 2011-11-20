@@ -9,9 +9,31 @@
 </head>
 <body>
 	<?php 
-		$cory = new person();//$cory becomes a handle/reference
+		//$cory = new person();//$cory becomes a handle/reference
 				    //because we will use $cory to control 
 				    //and use the person object
-	?>
+                $jimmy = new person; //() are optional for instantiating a class
+                
+                $cory = new person("Cory Koch");
+                
+                //nessesary when not using a constuctor.
+               // $cory->set_name("Cory Koch"); //moved to constructor
+                $jimmy->set_name("Jimmy Newton");
+                
+                echo "Cory's full name: " . $cory->get_name();
+                echo "\n";
+                echo "Jimmy's full name: ".$jimmy->get_name();
+                
+                
+                /*
+                 * Since $pinn_number was declared private, his line
+                 * of code will generate an error.
+                 */
+                $cory->set_pinn_number("123456");
+                echo "Tell me private stuff".$cory->pinn_number;
+                //Should have generated an error, Why not?
+                
+                echo "Cory's pinn is: ".$cory->get_pinn_number();
+        ?>
 </body>
 </html>
